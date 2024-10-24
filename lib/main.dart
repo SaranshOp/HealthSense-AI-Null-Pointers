@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import "package:http/http.dart" as http;
+import "package:logger/logger.dart";
+
+final logger = Logger();
 
 void main() {
   runApp(const MyApp());
@@ -56,8 +60,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  void sayHi() async {
+    final url = "http://10.0.2.2:5000/hello";
+    final response = await http.get(Uri.parse(url));
+    logger.w(response.body);
+  }
 
   void _incrementCounter() {
+    sayHi();
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
