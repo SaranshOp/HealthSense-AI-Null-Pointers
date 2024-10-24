@@ -1,7 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:null_pointers/handlers/imagePickerHandler.dart';
 
 class Imagepickerscreen extends StatefulWidget {
   const Imagepickerscreen({super.key});
@@ -9,6 +9,8 @@ class Imagepickerscreen extends StatefulWidget {
   @override
   State<Imagepickerscreen> createState() => _ImagepickerscreenState();
 }
+
+ImagePickerHandler imagePickerHandler = ImagePickerHandler();
 
 class _ImagepickerscreenState extends State<Imagepickerscreen> {
   XFile? image = null;
@@ -22,8 +24,9 @@ class _ImagepickerscreenState extends State<Imagepickerscreen> {
       );
       ScaffoldMessenger.of(context).showSnackBar(snackbar);
     } else {
-      setState(() {});
+      imagePickerHandler.image = image;
     }
+    setState(() {});
     //TODO: add capturing photo feature
   }
 
@@ -53,12 +56,18 @@ class _ImagepickerscreenState extends State<Imagepickerscreen> {
                 child: ElevatedButton(
                     onPressed: () {
                       pickImageHandler();
-                      if (image != null) {
-                        Navigator.pushNamed(context, "processing screen");
-                      }
                     },
                     child: Text("Pick Image")),
-              )
+              ),
+              if (image != null)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        imagePickerHandler.uploadPhoto();
+                      },
+                      child: Text("Upload image to backend")),
+                ),
             ],
           ),
         ),
