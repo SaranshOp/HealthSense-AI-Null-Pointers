@@ -8,7 +8,7 @@ class ImagePickerHandler {
   XFile? image;
   final url = "http://10.0.2.2:5000";
 
-  void uploadPhoto() async {
+  Future<bool> uploadPhoto() async {
     final uri = Uri.parse(url + "/upload-photo");
     final request = http.MultipartRequest("POST", uri)
       ..files.add(await http.MultipartFile.fromPath(
@@ -19,8 +19,10 @@ class ImagePickerHandler {
     final response = await request.send();
     if (response.statusCode == 200) {
       logger.w("image uploaded successfully");
+      return true;
     } else {
       logger.w("image not uploaded");
+      return false;
     }
   }
 }

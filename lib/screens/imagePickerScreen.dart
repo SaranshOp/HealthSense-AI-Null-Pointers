@@ -63,8 +63,22 @@ class _ImagepickerscreenState extends State<Imagepickerscreen> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
-                      onPressed: () {
-                        imagePickerHandler.uploadPhoto();
+                      onPressed: () async {
+                        bool isPhotoUploaded =
+                            await imagePickerHandler.uploadPhoto();
+                        if (isPhotoUploaded) {
+                          const snackbar = SnackBar(
+                            content: Text(
+                                "Image uploaded successfully, ready to process"),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                        } else {
+                          const snackbar = SnackBar(
+                            content:
+                                Text("Image not uploaded, please try again"),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                        }
                       },
                       child: Text("Upload image to backend")),
                 ),
