@@ -30,7 +30,7 @@ class AlzheimerTest extends StatelessWidget {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0),
-                  side: BorderSide(color: Colors.red))),
+                  side: BorderSide(color: Color(0xFF5c6bc0)))),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import "package:logger/logger.dart";
 
+import '../widgets/GenerateReportWidget.dart';
 import '../widgets/alzehimer_test.dart';
 import '../widgets/pneumonia_test.dart';
 import '../widgets/top_container.dart';
@@ -103,60 +104,7 @@ class _HomePageState extends State<HomePage> {
               fontSize: 18),
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          child: Container(
-            //alignment:  Alignment.centerLeft,
-            //width: MediaQuery.of(context).size.width,
-            height: 140,
-            margin: EdgeInsets.only(left: 0, right: 0, bottom: 20),
-            padding: EdgeInsets.only(left: 0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
-                stops: [0.3, 0.7],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: bannerCards[0],
-              ),
-            ),
-            child: Stack(
-              children: [
-                Image.asset(
-                  "assets/images/xRay_photo.png",
-                  fit: BoxFit.fitHeight,
-                ),
-                Container(
-                  padding: EdgeInsets.only(top: 7, right: 5),
-                  alignment: Alignment.topRight,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Test",
-                        //'Check Disease',
-                        style: TextStyle(
-                          color: Colors.lightBlue[900],
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
-                      ),
-                      Icon(
-                        Icons.chevron_right_rounded,
-                        color: Colors.lightBlue[900],
-                        size: 20,
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      GenerateReportWidget(),
       Container(
         padding: EdgeInsets.only(left: 20),
         alignment: Alignment.centerLeft,
@@ -173,162 +121,9 @@ class _HomePageState extends State<HomePage> {
           height: 200,
           padding: EdgeInsets.only(top: 14),
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [PneumoniaTest(), AlzheimerTest()],
           ))
     ]));
-    /*
-      Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "/imagePickerScreenXray");
-                },
-                child: Card(
-                  elevation: 10,
-                  child: SizedBox(
-                    child: Container(
-                      color: Color.fromRGBO(237, 236, 244, 1),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 40.0),
-                              child: Text(
-                                "X-Ray",
-                                style: TextStyle(
-                                    fontSize: 35, fontFamily: "Patrik_Hand"),
-                              ),
-                            ),
-                            SizedBox(
-                                height: 100,
-                                width: 100,
-                                child: Image.asset(
-                                  "assets/images/xRay_photo.png",
-                                  fit: BoxFit.contain,
-                                ))
-                          ],
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "/imagePickerScreenXray");
-                },
-                child: Card(
-                  elevation: 10,
-                  child: SizedBox(
-                    child: Container(
-                      color: Color.fromRGBO(237, 236, 244, 1),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(children: [
-                          Text(
-                            "MRI",
-                            style: TextStyle(
-                                fontSize: 30, fontFamily: "Patrik_Hand"),
-                          ),
-                          SizedBox(
-                            width: 55,
-                            child: Container(
-                              color: Colors.amber,
-                            ),
-                          )
-                        ]),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "/imagePickerScreenXray");
-                },
-                child: Card(
-                  elevation: 10,
-                  child: SizedBox(
-                    child: Container(
-                      color: Color.fromRGBO(237, 236, 244, 1),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Placeholder",
-                              style: TextStyle(
-                                  fontSize: 30, fontFamily: "Patrik_Hand"),
-                            ),
-                            SizedBox(
-                              width: 55,
-                              child: Container(
-                                color: Colors.amber,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "/imagePickerScreenXray");
-                },
-                child: Card(
-                  elevation: 10,
-                  child: SizedBox(
-                    child: Container(
-                      color: Color.fromRGBO(237, 236, 244, 1),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Generate Report",
-                              style: TextStyle(
-                                  fontSize: 30, fontFamily: "Patrik_Hand"),
-                            ),
-                            SizedBox(
-                              width: 55,
-                              child: Container(
-                                color: Colors.amber,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-       */
   }
 }
