@@ -2,6 +2,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:null_pointers/handlers/imagePickerHandler.dart';
+import 'package:null_pointers/screens/ResultXrayScreen.dart';
+import 'package:logger/logger.dart';
+
+var logger = Logger();
 
 class Imagepickerscreen extends StatefulWidget {
   const Imagepickerscreen({super.key});
@@ -14,6 +18,7 @@ ImagePickerHandler imagePickerHandler = ImagePickerHandler();
 
 class _ImagepickerscreenState extends State<Imagepickerscreen> {
   XFile? image = null;
+  bool isPhotoUploaded = false;
   void pickImageHandler() async {
     final ImagePicker picker = ImagePicker();
     // Pick an image.
@@ -64,8 +69,9 @@ class _ImagepickerscreenState extends State<Imagepickerscreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                       onPressed: () async {
-                        bool isPhotoUploaded =
+                        isPhotoUploaded =
                             await imagePickerHandler.uploadPhoto();
+                        setState(() {});
                         if (isPhotoUploaded) {
                           const snackbar = SnackBar(
                             content: Text(
@@ -81,6 +87,25 @@ class _ImagepickerscreenState extends State<Imagepickerscreen> {
                         }
                       },
                       child: Text("Upload image to backend")),
+                ),
+              if (isPhotoUploaded)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                      onPressed: () async {
+                        var response = await imagePickerHandler.processImage();
+                        // logger.w(response);
+                        if (response.containsKey("result")) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Resultxrayscreen(
+                                  mpp: response,
+                                ),
+                              ));
+                        }
+                      },
+                      child: Text("Process Image")),
                 ),
             ],
           ),

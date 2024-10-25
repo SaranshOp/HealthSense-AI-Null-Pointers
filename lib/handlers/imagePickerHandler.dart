@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import "package:logger/logger.dart";
@@ -17,12 +19,21 @@ class ImagePickerHandler {
         filename: "image",
       ));
     final response = await request.send();
+    var resposeval = await http.Response.fromStream(response);
     if (response.statusCode == 200) {
+      // logger.w(resposeval.body);
       logger.w("image uploaded successfully");
       return true;
     } else {
       logger.w("image not uploaded");
       return false;
+      ;
     }
+  }
+
+  Future<Map<String, dynamic>> processImage() async {
+    final uri = Uri.parse(url + "/process-image");
+    final response = await http.get(uri);
+    return jsonDecode(response.body);
   }
 }
