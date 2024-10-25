@@ -19,40 +19,36 @@ class _HomePageState extends State<HomePage> {
     logger.w(response.body);
   }
 
-  void _incrementCounter() {
-    sayHi();
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
+        body: Center(
+      child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, "/imagePickerScreen");
-                },
-                child: Text("Open Image Picker")),
-            const Text(
-              'You have pushed the button this many times:',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                title: Text("X Ray Scan"),
+                subtitle: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/imagePickerScreenXray");
+                    },
+                    child: Text("Open Image Picker")),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                title: Text("MRI Scan"),
+                subtitle: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/imagePickerScreenMRI");
+                    },
+                    child: Text("Open Image Picker")),
+              ),
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+          ]),
+    ));
   }
 }

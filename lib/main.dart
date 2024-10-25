@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:null_pointers/screens/homePage.dart';
-import 'package:null_pointers/screens/imagePickerScreen.dart';
+import 'package:null_pointers/screens/imagePickerScreenMRI.dart';
+import 'package:null_pointers/screens/imagePickerScreenXray.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => const HomePage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/imagePickerScreen': (context) => const Imagepickerscreen(),
+        '/imagePickerScreenXray': (context) => const Imagepickerscreen(),
+        '/imagePickerScreenMRI': (context) => const ImagepickerscreenMRI(),
       },
     );
   }
