@@ -2,6 +2,7 @@ import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import "package:logger/logger.dart";
+import 'package:null_pointers/screens/chat_with_AI.dart';
 import 'package:null_pointers/screens/homePage.dart';
 
 import '../widgets/GenerateReportWidget.dart';
