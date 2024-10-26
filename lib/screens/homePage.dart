@@ -66,23 +66,12 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             Container(
                               child: Text(
-                                'Sourav Suman',
+                                'placeholder name',
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                   fontSize: 22.0,
                                   color: Color(0xFF0D253F),
                                   fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              child: Text(
-                                'App Developer',
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.black45,
-                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
