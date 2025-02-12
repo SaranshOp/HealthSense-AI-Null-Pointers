@@ -28,5 +28,6 @@
 4. **Medical chatbot** provides health advice  
 
 ## 📜 Presentation & Demo 
-📄 [Project Presentation and Prototype Video (PDF)](https://drive.google.com/drive/folders/1AuBBcBQzRescKymIEuNJIkcW2fb-8o5g?usp=drive_link)  
+📄 [Project Presentation and Prototype Video (PDF)](https://drive.google.com/drive/folders/1AuBBcBQzRescKymIEuNJIkcW2fb-8o5g?usp=drive_link)
+📄 [Canva)](https://www.canva.com/design/DAGe569Er38/YcruucpDrXc7OK4aNJjafQ/edit?utm_content=DAGe569Er38&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
