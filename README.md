@@ -1,10 +1,9 @@
 # HealthSense AI  
+ 
+**HealthSense AI** is an AI-powered healthcare solution designed to enable **early disease detection** in remote and underserved areas. It allows users to upload medical images (such as X-rays and MRIs) through a **Flutter-based Android application**, which are then processed by a **Flask backend** with AI/ML models for **disease diagnosis**.  
 
 [![Project Prototype - Page 9](https://img.shields.io/badge/Demo-Video-blue)](https://www.canva.com/design/DAGe569Er38/YcruucpDrXc7OK4aNJjafQ/edit?utm_content=DAGe569Er38&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)  
 [![GitHub License](https://img.shields.io/github/license/your-username/HealthSenseAI)](LICENSE)  
-
-## 🚀 About the Project  
-**HealthSense AI** is an AI-powered healthcare solution designed to enable **early disease detection** in remote and underserved areas. It allows users to upload medical images (such as X-rays and MRIs) through a **Flutter-based Android application**, which are then processed by a **Flask backend** with AI/ML models for **disease diagnosis**.  
 
 ## 📌 Features  
 ✅ AI-powered disease detection (e.g., Pneumonia, Alzheimer’s)  
