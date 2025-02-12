@@ -1,16 +1,26 @@
-# null_pointers
+# HealthSense AI  
 
-A new Flutter project.
+[![Project Demo](https://img.shields.io/badge/Demo-Video-blue)](link-to-your-video)  
+[![GitHub License](https://img.shields.io/github/license/your-username/HealthSenseAI)](LICENSE)  
 
-## Getting Started
+## 🚀 About the Project  
+**HealthSense AI** is an AI-powered healthcare solution designed to enable **early disease detection** in remote and underserved areas. It allows users to upload medical images (such as X-rays and MRIs) through a **Flutter-based Android application**, which are then processed by a **Flask backend** with AI/ML models for **disease diagnosis**.  
 
-This project is a starting point for a Flutter application.
+## 📌 Features  
+✅ AI-powered disease detection (e.g., Pneumonia, Alzheimer’s)  
+✅ Secure and user-friendly Flutter-based mobile app  
+✅ Medical chatbot for instant health-related assistance  
+✅ Rapid diagnosis through deep learning models  
 
-A few resources to get you started if this is your first Flutter project:
+## 🏗 Tech Stack  
+- **Frontend:** Flutter (Dart)  
+- **Backend:** Flask (Python)  
+- **AI/ML Models:** TensorFlow, Hugging Face, Deep Learning  
+- **Models Used:**  
+  - BioGPT (Medical chatbot)  
+  - Vision Transformer (MRI scans analysis)  
+  - CheXNet (Chest X-ray classification)  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📷 Project Workflow  
+1. **Upload** an X-ray or
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
