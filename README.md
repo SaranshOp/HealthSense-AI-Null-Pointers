@@ -1,6 +1,6 @@
 # HealthSense AI  
 
-[![Project Demo](https://img.shields.io/badge/Demo-Video-blue)](link-to-your-video)  
+[![Project Demo](https://img.shields.io/badge/Demo-Video-blue)]()  
 [![GitHub License](https://img.shields.io/github/license/your-username/HealthSenseAI)](LICENSE)  
 
 ## 🚀 About the Project  
@@ -22,5 +22,9 @@
   - CheXNet (Chest X-ray classification)  
 
 ## 📷 Project Workflow  
-1. **Upload** an X-ray or
+1. **Upload** an X-ray or MRI image in the mobile app  
+2. **Flask backend** processes the image using AI models  
+3. **AI Prediction** is generated and displayed in the app  
+4. **Medical chatbot** provides health advice  
+
 
