@@ -27,4 +27,6 @@
 3. **AI Prediction** is generated and displayed in the app  
 4. **Medical chatbot** provides health advice  
 
+## 📜 Presentation & Demo 
+📄 [Project Presentation and Prototype Video (PDF)](https://drive.google.com/file/d/1yD5QGC_JA9FKeCVBcbeZqdnFfdhe4TPJ/view?usp=drive_link)  
 
