@@ -1,17 +1,17 @@
-import os
-os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
-os.environ['MKL_THREADING_LAYER']='GNU'
-os.environ['MKL_SERVICE_FORCE_INTEL']='1'
+# import os
+# os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
+# os.environ['MKL_THREADING_LAYER']='GNU'
+# os.environ['MKL_SERVICE_FORCE_INTEL']='1'
 from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 from transformers import pipeline
-import torch 
-import torch.nn as nn
-from torchvision import models, transforms
-from PIL import Image
-import random
-import numpy as np
-from transformers import pipeline
+# import torch 
+# import torch.nn as nn
+# from torchvision import models, transforms
+# from PIL import Image
+# import random
+# import numpy as np
+# from transformers import pipeline
 pipe = pipeline("image-classification", model="dewifaj/alzheimer_mri_classification")
 
 llm_pipeline = pipeline("text-generation", model="microsoft/biogpt")     
@@ -97,7 +97,7 @@ def get_advice():
         
         # Generate advice for each category
         for category in categories:
-            prompt = f"\n Given a {age}-year-old {gender} patient with symptoms: {symptoms} and findings: {mri_results}, {xray_results} "
+            prompt = f"Given a {age}-year-old {gender} patient with symptoms: {symptoms} and findings: {mri_results}, {xray_results}, show me "
             
             if category == "Precautions":
                 prompt += ".5 precautionary advices that patient has to follow in this condition are"

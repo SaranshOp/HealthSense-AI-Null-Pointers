@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:null_pointers/screens/homePage.dart';
 import 'package:null_pointers/screens/imagePickerScreenMRI.dart';
 import 'package:null_pointers/screens/imagePickerScreenXray.dart';
 // import 'package:null_pointers/screens/inroductionAnimation/welcome_screen.dart';

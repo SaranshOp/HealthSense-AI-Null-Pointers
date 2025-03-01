@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             Container(
                               child: Text(
-                                'placeholder name',
+                                'Welcome Varun',
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                   fontSize: 22.0,
