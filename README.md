@@ -12,7 +12,10 @@
   Your browser does not support the video tag.
 </video>
 
-[![Demo Video](https://img.shields.io/badge/Demo-Video-green)](assets/videos/demo_video.mp4)
+https://github.com/user-attachments/assets/335b0d8e-d5db-466f-ba0e-1e73c9fc4eb4
+
+[![Demo Video](https://img.shields.io/badge/Demo-Video-green)](https://github.com/user-attachments/assets/335b0d8e-d5db-466f-ba0e-1e73c9fc4eb4)
+[![Demo Video](https://img.shields.io/badge/Video-Download-purple)](assets/videos/demo_video.mp4)
 
 ## 📌 Features
 
